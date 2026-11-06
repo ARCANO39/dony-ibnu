@@ -1,0 +1,39 @@
+# Flow 04: Validasi Kesalahan & Pengujian Kondisi Gagal (Negative Testing)
+# Mata Kuliah: Mobile Testing - Universitas Duta Bangsa Surakarta
+# Aplikasi: Pandhawa Notbook Salatiga
+
+appId: com.example.laptop_service_app
+---
+- launchApp
+
+# ========================================================
+# KASUS 1: Validasi Form Registrasi Kosong (Field Wajib Isi)
+# ========================================================
+- tapOn: "Registrasi"
+- assertVisible: "Registrasi Servis Unit Masuk"
+
+# Langsung klik Simpan tanpa mengisi data apapun
+- scroll
+- tapOn: "Simpan & Buat Tiket Servis"
+
+# Assertion Pesan Validasi Error Muncul
+- assertVisible: "Wajib diisi"
+- takeScreenshot: screenshots/04_validation_empty_form_error
+
+# ========================================================
+# KASUS 2: Kondisi Gagal Pelacakan Servis (Nomor Tiket Salah)
+# ========================================================
+- tapOn: "Tracking"
+- assertVisible: "Portal Tracking Servis (Pelanggan)"
+
+# Masukkan nomor tiket servis yang tidak terdaftar (fiktif)
+- tapOn: "Nomor Tiket Servis"
+- eraseText: 25
+- inputText: "SRV-99999999-999"
+
+# Eksekusi Tombol Pencarian
+- tapOn: "Lacak Status Servis"
+
+# Assertion Pesan Error Gagal Tampil
+- assertVisible: "Tiket tidak ditemukan atau 4 digit nomor WhatsApp tidak cocok."
+- takeScreenshot: screenshots/04_validation_ticket_not_found_error

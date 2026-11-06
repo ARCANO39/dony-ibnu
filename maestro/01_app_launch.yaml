@@ -1,0 +1,31 @@
+# Flow 01: Pembukaan Aplikasi & Verifikasi Dashboard
+# Mata Kuliah: Mobile Testing - Universitas Duta Bangsa Surakarta
+# Aplikasi: Pandhawa Notbook Salatiga
+
+appId: com.example.laptop_service_app
+---
+- launchApp:
+    clearState: true
+
+# Assertion 1: Memastikan judul aplikasi tampil di App Bar
+- assertVisible: "Pandhawa Notbook Salatiga"
+
+# Assertion 2: Memastikan kartu selamat datang dan branding toko tampil
+- assertVisible: "Pusat Servis Laptop & Suku Cadang Terpercaya Salatiga"
+
+# Assertion 3: Memastikan metric card statistik operasional tampil
+- assertVisible: "Unit Aktif"
+- assertVisible: "Siap Diambil"
+- assertVisible: "Stok Kritis"
+- assertVisible: "Total Pendapatan"
+
+# Assertion 4: Memastikan navigasi bawah (bottom navigation bar) siap digunakan
+- assertVisible: "Dashboard"
+- assertVisible: "Registrasi"
+- assertVisible: "Teknisi"
+- assertVisible: "Gudang"
+- assertVisible: "Kasir"
+- assertVisible: "Tracking"
+
+# Bukti Screenshot Eksekusi
+- takeScreenshot: screenshots/01_dashboard_launched
