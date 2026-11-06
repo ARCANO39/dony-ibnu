@@ -1,0 +1,23 @@
+# Flutter build and cache
+**/build/
+**/.dart_tool/
+**/.flutter-plugins-dependencies
+**/.pub-cache/
+**/.pub/
+
+# Android build and local config
+**/.gradle/
+**/local.properties
+**/android/.gradle/
+**/android/app/build/
+**/android/build/
+
+# IDE and editor files
+**/.idea/
+**/*.iml
+**/.vscode/
+
+# Operating system files
+*.log
+.DS_Store
+Thumbs.db
