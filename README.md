@@ -1,4 +1,4 @@
-# Pandhawa Notbook Salatiga - Service Management & POS System
+﻿# Pandhawa Notbook Salatiga - Service Management & POS System
 ### Ujian Tengah Semester (UTS) Ganjil Tahun Akademik 2026/2027
 **Mata Kuliah:** Mobile Testing  
 **Dosen Pengampu:** Triyono M.Kom  
@@ -12,7 +12,7 @@
 | Informasi | Detail |
 |---|---|
 | **Nama Lengkap** | Dony Ibnu Prakoso |
-| **NIM** | [Isi NIM Mahasiswa, contoh: 230101xxx] |
+| **NIM** | 230103261 |
 | **Kelas** | TI23B |
 | **Peran Proyek** | Full-stack Mobile Developer, Quality Assurance & Mobile Automation Tester |
 
@@ -167,3 +167,4 @@ Repositori ini dikembangkan menggunakan standar **GitFlow** dengan commit bertah
   - `feature/dashboard-navigation`
   - `feature/branding-pandhawa-salatiga`
   - `feature/maestro-automate-testing` (Testing suite & laporan UAT)
+
