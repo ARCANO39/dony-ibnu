@@ -1,11 +1,10 @@
 # Flow 04: Validasi Kesalahan & Pengujian Kondisi Gagal (Negative Testing)
 # Mata Kuliah: Mobile Testing - Universitas Duta Bangsa Surakarta
+# Mahasiswa: Dony Ibnu Prakoso
 # Aplikasi: Pandhawa Notbook Salatiga
 
 appId: com.example.laptop_service_app
 ---
-- launchApp
-
 # ========================================================
 # KASUS 1: Validasi Form Registrasi Kosong (Field Wajib Isi)
 # ========================================================
@@ -32,7 +31,7 @@ appId: com.example.laptop_service_app
 - inputText: "SRV-99999999-999"
 
 # Eksekusi Tombol Pencarian
-- tapOn: ".*Lacak Status.*"
+- tapOn: ".*Lacak Progres.*"
 
 # Assertion Pesan Error Gagal Tampil
 - assertVisible: ".*Tiket tidak ditemukan.*"

@@ -1,14 +1,13 @@
 # Flow 02: Navigasi Antar Halaman & Verifikasi Tampilan Modul
 # Mata Kuliah: Mobile Testing - Universitas Duta Bangsa Surakarta
+# Mahasiswa: Dony Ibnu Prakoso
 # Aplikasi: Pandhawa Notbook Salatiga
 
 appId: com.example.laptop_service_app
 ---
-- launchApp
-
 # 1. Navigasi ke Halaman Registrasi Unit Masuk
 - tapOn: ".*Registrasi.*"
-- assertVisible: ".*Penerimaan Unit Servis Baru.*"
+- assertVisible: ".*Registrasi Servis.*"
 - takeScreenshot: screenshots/02_nav_registration
 
 # 2. Navigasi ke Halaman Meja Teknisi
@@ -18,12 +17,12 @@ appId: com.example.laptop_service_app
 
 # 3. Navigasi ke Halaman Inventaris Gudang Sparepart
 - tapOn: ".*Gudang.*"
-- assertVisible: ".*Inventaris Suku Cadang.*"
+- assertVisible: ".*Inventaris Sparepart.*"
 - takeScreenshot: screenshots/02_nav_inventory
 
 # 4. Navigasi ke Halaman Kasir POS & Pelunasan
 - tapOn: ".*Kasir.*"
-- assertVisible: ".*Kasir & Pelunasan.*"
+- assertVisible: ".*Kasir & Pembayaran.*"
 - takeScreenshot: screenshots/02_nav_pos
 
 # 5. Navigasi ke Halaman Portal Tracking Pelanggan

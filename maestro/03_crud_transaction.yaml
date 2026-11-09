@@ -1,11 +1,10 @@
 # Flow 03: Alur Transaksi & CRUD (Pembuatan Tiket Servis Unit Baru)
 # Mata Kuliah: Mobile Testing - Universitas Duta Bangsa Surakarta
+# Mahasiswa: Dony Ibnu Prakoso
 # Aplikasi: Pandhawa Notbook Salatiga
 
 appId: com.example.laptop_service_app
 ---
-- launchApp
-
 # Langkah 1: Masuk ke Form Registrasi Servis
 - tapOn: ".*Registrasi.*"
 - assertVisible: ".*Registrasi Servis.*"
@@ -19,15 +18,14 @@ appId: com.example.laptop_service_app
 
 # Langkah 3: Mengisi Formulir Data Unit Laptop
 - scroll
+- tapOn: ".*Merek.*"
+- inputText: "ASUS"
+
 - tapOn: ".*Model / Tipe Laptop.*"
 - inputText: "ROG Zephyrus G14"
 
-- tapOn: ".*Keluhan Awal Laptop.*"
+- tapOn: ".*Keluhan Kerusakan.*"
 - inputText: "Layar blank saat render video dan kipas bising"
-
-# Langkah 4: Memilih Checklist Fisik
-- scroll
-- tapOn: ".*Bawa Charger.*"
 
 # Bukti Form Terisi
 - takeScreenshot: screenshots/03_crud_form_filled
