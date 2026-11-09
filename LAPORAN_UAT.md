@@ -205,3 +205,4 @@ Berdasarkan keseluruhan hasil pengujian User Acceptance Testing (UAT) di atas:
 NIM: [Isi NIM Anda]  
 Kelas: TI23B - S1 Teknik Informatika  
 Fakultas Ilmu Komputer, Universitas Duta Bangsa Surakarta
+

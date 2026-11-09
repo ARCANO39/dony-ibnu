@@ -42,3 +42,4 @@ appId: com.example.laptop_service_app
 - assertVisible: "Pandhawa Notbook Salatiga"
 - assertVisible: "Unit Aktif"
 - takeScreenshot: screenshots/02_nav_back_to_dashboard
+
