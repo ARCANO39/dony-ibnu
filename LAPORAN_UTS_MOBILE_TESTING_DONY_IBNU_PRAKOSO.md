@@ -1,4 +1,4 @@
-# LAPORAN LENGKAP UJIAN TENGAH SEMESTER (UTS)
+﻿# LAPORAN LENGKAP UJIAN TENGAH SEMESTER (UTS)
 ## MATA KULIAH: MOBILE TESTING (TI23B)
 ### FAKULTAS ILMU KOMPUTER - UNIVERSITAS DUTA BANGSA SURAKARTA
 **Tahun Akademik 2026/2027**
@@ -14,7 +14,7 @@
 | **Program Studi** | S1 Teknik Informatika |
 | **Kelas / Sifat** | TI23B / Projek |
 | **Nama Mahasiswa** | **Dony Ibnu Prakoso** |
-| **NIM** | [Isi NIM Anda di sini] |
+| **NIM** | 230103261 |
 | **Judul Proyek** | **Pengujian Aplikasi Mobile dengan User Acceptance Testing dan Maestro** |
 | **Nama Aplikasi** | **Pandhawa Notbook Salatiga** (Versi 1.0.0 Release) |
 | **Tautan Repository GitHub** | [https://github.com/ARCANO39/dony-ibnu.git](https://github.com/ARCANO39/dony-ibnu.git) |
@@ -560,7 +560,7 @@ Repositori dikembangkan mengikuti kaidah **GitFlow** dan **Conventional Commits*
 Gunakan struktur presentasi ini saat Anda merekam video penjelasan untuk memenuhi kriteria penilaian Dosen (Bobot 15%):
 
 1. **Bagian 1 (Menit 00:00 – 01:00): Pembukaan & Identitas Diri**
-   - *"Selamat pagi/siang Pak Triyono M.Kom dan rekan-rekan. Nama saya Dony Ibnu Prakoso, NIM [NIM Anda], kelas TI23B S1 Teknik Informatika Universitas Duta Bangsa Surakarta. Pada video ini saya mempresentasikan hasil proyek Ujian Tengah Semester (UTS) mata kuliah Mobile Testing dengan judul: Pengujian Aplikasi Mobile dengan User Acceptance Testing dan Maestro."*
+   - *"Selamat pagi/siang Pak Triyono M.Kom dan rekan-rekan. Nama saya Dony Ibnu Prakoso, NIM 230103261, kelas TI23B S1 Teknik Informatika Universitas Duta Bangsa Surakarta. Pada video ini saya mempresentasikan hasil proyek Ujian Tengah Semester (UTS) mata kuliah Mobile Testing dengan judul: Pengujian Aplikasi Mobile dengan User Acceptance Testing dan Maestro."*
 2. **Bagian 2 (Menit 01:00 – 03:00): Gambaran Aplikasi & Fitur Utama**
    - Tunjukkan aplikasi **Pandhawa Notbook Salatiga** yang terpasang di HP.
    - Sorot logo monogram baru, nama teknisi tunggal (**Dony Ibnu Prakoso**), kartu 3D SSD dan Keyboard di menu Gudang, modul intake tiket, kasir POS, dan portal tracking.
@@ -592,7 +592,8 @@ Laporan ini disusun secara utuh untuk memenuhi evaluasi Ujian Tengah Semester (U
 **Mahasiswa Penguji,**
 
 **Dony Ibnu Prakoso**  
-NIM: [Isi NIM Anda]  
+NIM: 230103261  
 Kelas TI23B — S1 Teknik Informatika  
 Fakultas Ilmu Komputer, Universitas Duta Bangsa Surakarta
+
 

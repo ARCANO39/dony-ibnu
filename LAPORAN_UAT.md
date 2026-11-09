@@ -1,4 +1,4 @@
-# LAPORAN USER ACCEPTANCE TESTING (UAT)
+﻿# LAPORAN USER ACCEPTANCE TESTING (UAT)
 ## PENGUJIAN APLIKASI MOBILE "PANDHAWA NOTBOOK SALATIGA"
 
 **Mata Kuliah** : Mobile Testing  
@@ -6,7 +6,7 @@
 **Fakultas / Universitas** : Fakultas Ilmu Komputer, Universitas Duta Bangsa Surakarta  
 **Dosen Pengampu** : Triyono M.Kom  
 **Waktu Pengujian** : Semester Ganjil 2026/2027  
-**Penguji / Mahasiswa** : Dony Ibnu Prakoso (NIM: [Isi NIM Mahasiswa])  
+**Penguji / Mahasiswa** : Dony Ibnu Prakoso (NIM: 230103261)  
 **Target Aplikasi** : Pandhawa Notbook Salatiga v1.0.0 (Release Build: `pandhawa_notbook_salatiga.apk`)
 
 ---
@@ -202,7 +202,8 @@ Berdasarkan keseluruhan hasil pengujian User Acceptance Testing (UAT) di atas:
 **Disusun dan Diuji Oleh:**
 
 **Dony Ibnu Prakoso**  
-NIM: [Isi NIM Anda]  
+NIM: 230103261  
 Kelas: TI23B - S1 Teknik Informatika  
 Fakultas Ilmu Komputer, Universitas Duta Bangsa Surakarta
+
 
