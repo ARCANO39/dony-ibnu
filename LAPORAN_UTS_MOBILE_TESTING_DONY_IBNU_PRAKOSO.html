@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan Lengkap UTS Mobile Testing - Dony Ibnu Prakoso</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+    
+    :root {
+      --primary: #1e40af;
+      --primary-light: #dbeafe;
+      --secondary: #0f172a;
+      --accent: #2563eb;
+      --success: #16a34a;
+      --success-bg: #dcfce7;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #334155;
+      --heading: #0f172a;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: var(--card-bg);
+      padding: 50px 60px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    @media print {
+      body { background: #fff; }
+      .container { max-width: 100%; margin: 0; padding: 20px; box-shadow: none; border-radius: 0; }
+      .page-break { page-break-after: always; }
+      .no-print { display: none; }
+    }
+
+    .header-univ {
+      text-align: center;
+      border-bottom: 3px double var(--secondary);
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+
+    .header-univ h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--heading);
+      text-transform: uppercase;
+    }
+
+    .header-univ h2 {
+      margin: 5px 0 0 0;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .header-univ p {
+      margin: 4px 0 0 0;
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    .doc-title {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .doc-title h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--heading);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .doc-title p {
+      font-size: 14px;
+      color: var(--accent);
+      font-weight: 600;
+      margin: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0;
+      font-size: 13px;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      color: var(--heading);
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .badge-pass {
+      display: inline-block;
+      background: var(--success-bg);
+      color: var(--success);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 11px;
+    }
+
+    h2 {
+      color: var(--heading);
+      font-size: 17px;
+      font-weight: 700;
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+      margin-top: 36px;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      color: var(--heading);
+      font-size: 15px;
+      font-weight: 600;
+      margin-top: 22px;
+      margin-bottom: 8px;
+    }
+
+    pre, code {
+      font-family: 'Fira Code', monospace;
+    }
+
+    pre {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 16px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    p code, td code {
+      background: #f1f5f9;
+      color: #be185d;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .screenshot-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .screenshot-card .caption {
+      padding: 8px 12px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--heading);
+    }
+
+    .print-bar {
+      position: sticky;
+      top: 0;
+      background: #1e293b;
+      color: #fff;
+      padding: 12px 20px;
+      text-align: center;
+      z-index: 999;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-print {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn-print:hover {
+      background: #1d4ed8;
+    }
+
+    .footer-sign {
+      margin-top: 40px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .sign-box {
+      text-align: center;
+      width: 250px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar no-print">
+    <div><strong>Laporan Lengkap UTS Mobile Testing</strong> — Mahasiswa: Dony Ibnu Prakoso (TI23B)</div>
+    <button class="btn-print" onclick="window.print()">🖨️ Cetak / Simpan sebagai PDF</button>
+  </div>
+
+  <div class="container">
+    <div class="header-univ">
+      <h1>FAKULTAS ILMU KOMPUTER</h1>
+      <h2>UNIVERSITAS DUTA BANGSA SURAKARTA</h2>
+      <p>Kampus Fakultas Ilmu Komputer: Jl. Bhayangkara No. 55, Tipes, Surakarta | Telp. 0271-719552 | Web: www.udb.ac.id</p>
+    </div>
+
+    <div class="doc-title">
+      <h3>UJIAN TENGAH SEMESTER (UTS) GANJIL T.A. 2026/2027</h3>
+      <p>Mata Kuliah: Mobile Testing (S1 Teknik Informatika - TI23B) • Dosen: Triyono M.Kom</p>
+    </div>
+
+    <h2>1. IDENTITAS MAHASISWA & BERKAS PENGUMPULAN</h2>
+    <table>
+      <tr>
+        <th style="width: 30%;">Nama Lengkap</th>
+        <td><strong>Dony Ibnu Prakoso</strong></td>
+      </tr>
+      <tr>
+        <th>NIM</th>
+        <td>[Isi NIM Anda di sini]</td>
+      </tr>
+      <tr>
+        <th>Kelas / Sifat Ujian</th>
+        <td>TI23B / Projek</td>
+      </tr>
+      <tr>
+        <th>Judul Proyek</th>
+        <td><strong>Pengujian Aplikasi Mobile dengan User Acceptance Testing dan Maestro</strong></td>
+      </tr>
+      <tr>
+        <th>Nama Aplikasi</th>
+        <td>Pandhawa Notbook Salatiga v1.0.0 (Release Build)</td>
+      </tr>
+      <tr>
+        <th>Tautan Repositori GitHub</th>
+        <td><a href="https://github.com/ARCANO39/dony-ibnu.git" target="_blank">https://github.com/ARCANO39/dony-ibnu.git</a></td>
+      </tr>
+      <tr>
+        <th>Tautan Video Penjelasan</th>
+        <td>[Masukkan Tautan YouTube / Google Drive Anda di Sini]</td>
+      </tr>
+      <tr>
+        <th>Berkas APK Siap Pasang</th>
+        <td><code>pandhawa_notbook_salatiga.apk</code> (Ukuran: 71.1 MB)</td>
+      </tr>
+    </table>
+
+    <h2>2. GAMBARAN UMUM APLIKASI</h2>
+    <p><strong>Tujuan Aplikasi:</strong> Mendigitalkan seluruh alur kerja operasional bengkel servis komputer jinjing di Pandhawa Notbook Salatiga, meliputi penerimaan unit masuk (intake), diagnosa kerja teknisi hardware (Dony Ibnu Prakoso), alokasi stok suku cadang gudang, transaksi pembayaran nota di kasir POS, dan portal pelacakan mandiri transparan bagi pelanggan via WhatsApp.</p>
+    
+    <p><strong>Persona Pengguna (User Personas):</strong></p>
+    <ul>
+      <li><strong>P-01 (Front Office / Kasir):</strong> Bertanggung jawab atas penerimaan laptop, pencatatan keluhan fisik, pencetakan label QR, dan pemrosesan nota lunas di kasir POS.</li>
+      <li><strong>P-02 (Teknisi Hardware & QC - Dony Ibnu Prakoso):</strong> Bertanggung jawab atas diagnosa komponen, perbaikan hardware, pencatatan log pengerjaan, alokasi sparepart, dan uji kelayakan.</li>
+      <li><strong>P-03 (Pelanggan / Konsumen):</strong> Pengguna layanan yang memanfaatkan portal tracking status servis menggunakan nomor tiket dan 4 digit nomor WhatsApp.</li>
+    </ul>
+
+    <h2>3. LAPORAN USER ACCEPTANCE TESTING (UAT)</h2>
+    <p>Pengujian penerimaan pengguna mencakup 6 skenario lengkap (alur utama, validasi input, kondisi gagal, dan fitur tambahan):</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Skenario Pengujian</th>
+          <th>Persona</th>
+          <th>Hasil Aktual</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>UAT-01</strong></td>
+          <td>Registrasi Unit Masuk & Terbit Label QR</td>
+          <td>Kasir (P-01)</td>
+          <td>Form tersimpan, Nomor Tiket <code>SRV-20261106-004</code> & QR terbit.</td>
+          <td><span class="badge-pass">LULUS (100%)</span></td>
+        </tr>
+        <tr>
+          <td><strong>UAT-02</strong></td>
+          <td>Meja Kerja Teknisi & Alokasi Sparepart</td>
+          <td>Teknisi (P-02)</td>
+          <td>Status naik ke "Siap Diambil", sparepart & biaya terakumulasi.</td>
+          <td><span class="badge-pass">LULUS (100%)</span></td>
+        </tr>
+        <tr>
+          <td><strong>UAT-03</strong></td>
+          <td>Kasir POS, Pelunasan & Perhitungan DP</td>
+          <td>Kasir (P-01)</td>
+          <td>Nota lunas, omzet kasir bertambah, unit berstatus delivered.</td>
+          <td><span class="badge-pass">LULUS (100%)</span></td>
+        </tr>
+        <tr>
+          <td><strong>UAT-04</strong></td>
+          <td>Validasi Formulir Registrasi Kosong</td>
+          <td>Kasir (P-01)</td>
+          <td>Sistem memblokir submit dan menampilkan teks merah <em>"Wajib diisi"</em>.</td>
+          <td><span class="badge-pass">LULUS (100%)</span></td>
+        </tr>
+        <tr>
+          <td><strong>UAT-05</strong></td>
+          <td>Pelacakan Tiket Fiktif / Salah</td>
+          <td>Pelanggan (P-03)</td>
+          <td>Aplikasi aman, muncul pesan banner <em>"Tiket tidak ditemukan"</em>.</td>
+          <td><span class="badge-pass">LULUS (100%)</span></td>
+        </tr>
+        <tr>
+          <td><strong>UAT-06</strong></td>
+          <td>Peringatan Stok Kritis Gudang Sparepart</td>
+          <td>Teknisi (P-02)</td>
+          <td>Komponen stok &le; 3 ditandai badge oranye dan sinkron di Dashboard.</td>
+          <td><span class="badge-pass">LULUS (100%)</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>4. AUTOMATE TESTING MENGGUNAKAN MAESTRO</h2>
+    <p>Pengujian regresi otomatis diimplementasikan menggunakan 4 file flow YAML di folder <code>maestro/</code>:</p>
+    <ul>
+      <li><code>01_app_launch.yaml</code>: Memverifikasi App Bar, branding logo baru, dan antrean teknisi Dony Ibnu Prakoso.</li>
+      <li><code>02_navigation.yaml</code>: Memverifikasi navigasi 5 modul (Registrasi, Teknisi, Gudang, Kasir, Tracking).</li>
+      <li><code>03_crud_transaction.yaml</code>: Mengisi formulir pelanggan Budi Santoso, Asus ROG Zephyrus G14, verifikasi dialog tiket QR, dan masuk antrean teknisi.</li>
+      <li><code>04_validation_error.yaml</code>: Menguji validasi form kosong ("Wajib diisi") dan pencarian nomor tiket tidak valid.</li>
+    </ul>
+
+    <h2>5. BUKTI TANGKAPAN LAYAR PENGUJIAN (TEST EVIDENCE)</h2>
+    <div class="screenshot-grid">
+      <div class="screenshot-card">
+        <img src="maestro/screenshots/01_dashboard_launched.png" alt="Dashboard Launched">
+        <div class="caption">Flow 01: Dashboard, Logo Baru & Teknisi Dony Ibnu Prakoso</div>
+      </div>
+      <div class="screenshot-card">
+        <img src="maestro/screenshots/02_nav_inventory.png" alt="Inventory">
+        <div class="caption">Flow 02: Gudang Sparepart (Kartu 3D SSD & Keyboard)</div>
+      </div>
+      <div class="screenshot-card">
+        <img src="maestro/screenshots/03_crud_ticket_dialog_success.png" alt="CRUD QR Dialog">
+        <div class="caption">Flow 03: Dialog Registrasi Berhasil & Label QR Tiket</div>
+      </div>
+      <div class="screenshot-card">
+        <img src="maestro/screenshots/04_validation_ticket_not_found_error.png" alt="Validation Error">
+        <div class="caption">Flow 04: Penanganan Galat Tiket Tidak Ditemukan</div>
+      </div>
+    </div>
+
+    <h2>6. ARSITEKTUR GIT & RIWAYAT COMMIT</h2>
+    <p>Repositori dikembangkan mengikuti kaidah GitFlow dengan <strong>25 commit bermakna</strong> sejak inisialisasi awal hingga perilisan versi 1.0.0:</p>
+    <pre>
+* 7274c75 docs(evidence): tambahkan seluruh tangkapan layar bukti eksekusi pengujian Flow 02, Flow 03, dan Flow 04
+* b87be4a feat(testing): update flow skenario maestro 01-04 dan tambahkan bukti screenshot pengujian
+* 3fd79b5 feat(inventory): add custom 3D SSD and Keyboard icons, expand spareparts catalog, set technician to Dony Ibnu Prakoso
+* 30dbd82 feat(branding): update official brand logo monogram and launcher icons across Android and Web
+* fa200a2 test(mobile): implement Maestro automation flows and comprehensive UAT test report for UTS
+* 581e9a5 docs: finalize project documentation and ignore rules
+* 996d756 merge: integrate feature/branding-pandhawa-salatiga into develop
+* 013ecb9 feat(branding): apply Pandhawa Notbook Salatiga visual identity, custom neon launcher icons, and feature banners
+* 7c6b6fe merge: integrate feature/dashboard-navigation into develop
+* 5f067b4 feat(dashboard): integrate responsive navigation shell and management overview dashboard
+* 15302c6 merge: integrate feature/customer-tracking into develop
+* 7208296 feat(tracking): implement public customer status tracking portal with WhatsApp verification
+* d11a645 merge: integrate feature/pos-billing into develop
+* 0a705f1 feat(pos): implement cashier point-of-sale billing, receipt printing, and transaction logs
+* e308bbf merge: integrate feature/inventory-management into develop
+* f609836 feat(inventory): implement spare parts catalog, stock level monitoring, and price management
+* 86adb0e merge: integrate feature/technician-workbench into develop
+* def89ad feat(technician): implement technician repair workbench, diagnostic pipelines, and parts allocation
+* 3b45f22 merge: integrate feature/ticket-registration into develop
+* 4f40268 feat(registration): implement customer intake, hardware diagnostic checklist, and QR label generation
+* b28813d merge: integrate feature/domain-models-state into develop
+* 17677c8 feat(state): implement domain entities (ServiceTicket, Sparepart, Transaction) and reactive AppState
+* 94f9e1f merge: integrate feature/project-scaffolding into develop
+* 9d3ef29 feat(core): initialize Flutter project structure, Android Gradle configuration, and dependencies
+* 20be919 chore: initial repository setup with project documentation and UAT specifications
+    </pre>
+
+    <h2>7. KESIMPULAN</h2>
+    <p>Aplikasi mobile <strong>Pandhawa Notbook Salatiga</strong> telah berhasil dirancang, diuji secara manual (UAT dengan tingkat kelulusan 100%), dan diuji secara otomatis menggunakan framework Maestro sesuai seluruh butir instruksi soal Ujian Tengah Semester (UTS) Ganjil Tahun Akademik 2026/2027.</p>
+
+    <div class="footer-sign">
+      <div class="sign-box">
+        <p>Surakarta, November 2026<br>Mahasiswa Penguji,</p>
+        <br><br><br>
+        <p><strong>Dony Ibnu Prakoso</strong><br>NIM: [Isi NIM Anda]<br>Kelas TI23B</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
