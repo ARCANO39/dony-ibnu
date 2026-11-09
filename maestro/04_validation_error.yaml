@@ -37,3 +37,4 @@ appId: com.example.laptop_service_app
 # Assertion Pesan Error Gagal Tampil
 - assertVisible: "Tiket tidak ditemukan atau 4 digit nomor WhatsApp tidak cocok."
 - takeScreenshot: screenshots/04_validation_ticket_not_found_error
+

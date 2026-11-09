@@ -100,3 +100,4 @@ Setiap flow dilengkapi perintah `takeScreenshot` yang otomatis menyimpan bukti p
 4. `04_validation_empty_form_error.png`, `04_validation_ticket_not_found_error.png`
 
 Pengujian ini dapat direkam menjadi format video MP4 sebagai bahan lampiran video penjelasan UTS.
+

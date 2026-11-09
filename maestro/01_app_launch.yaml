@@ -4,8 +4,7 @@
 
 appId: com.example.laptop_service_app
 ---
-- launchApp:
-    clearState: true
+- launchApp
 
 # Assertion 1: Memastikan judul aplikasi tampil di App Bar
 - assertVisible: "Pandhawa Notbook Salatiga"
@@ -29,3 +28,4 @@ appId: com.example.laptop_service_app
 
 # Bukti Screenshot Eksekusi
 - takeScreenshot: screenshots/01_dashboard_launched
+

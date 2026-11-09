@@ -45,3 +45,4 @@ appId: com.example.laptop_service_app
 - tapOn: "Buka di Meja Teknisi"
 - assertVisible: "Meja Kerja Teknisi"
 - takeScreenshot: screenshots/03_crud_verified_in_technician_queue
+
