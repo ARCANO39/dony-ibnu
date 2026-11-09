@@ -304,9 +304,7 @@ class _TechnicianViewState extends State<TechnicianView> {
                           ),
                           items: const [
                             DropdownMenuItem(value: null, child: Text('Belum Ditugaskan')),
-                            DropdownMenuItem(value: 'Budi Santoso', child: Text('Budi Santoso')),
-                            DropdownMenuItem(value: 'Doni Pratama', child: Text('Doni Pratama')),
-                            DropdownMenuItem(value: 'Agus Wijaya', child: Text('Agus Wijaya')),
+                            DropdownMenuItem(value: 'Dony Ibnu Prakoso', child: Text('Dony Ibnu Prakoso')),
                           ],
                           onChanged: (val) {
                             if (val != null) {

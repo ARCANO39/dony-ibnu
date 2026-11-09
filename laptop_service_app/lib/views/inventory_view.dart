@@ -207,15 +207,7 @@ class _InventoryViewState extends State<InventoryView> {
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  CircleAvatar(
-                                    backgroundColor: p.isLowStock
-                                        ? Colors.red.shade100
-                                        : Colors.blue.shade100,
-                                    child: Icon(
-                                      Icons.memory,
-                                      color: p.isLowStock ? Colors.red : Colors.blue.shade800,
-                                    ),
-                                  ),
+                                  _buildSparepartThumbnail(p),
                                   const SizedBox(width: 12),
                                   Expanded(
                                     child: Column(
@@ -424,6 +416,111 @@ class _InventoryViewState extends State<InventoryView> {
             child: const Text('Simpan'),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildSparepartThumbnail(Sparepart p) {
+    final lowerName = p.name.toLowerCase();
+    final lowerCategory = p.category.toLowerCase();
+    final lowerSku = p.sku.toLowerCase();
+
+    final isSSD = lowerCategory.contains('storage') ||
+        lowerName.contains('ssd') ||
+        lowerSku.contains('ssd');
+    final isKeyboard = lowerCategory.contains('keyboard') ||
+        lowerName.contains('keyboard') ||
+        lowerSku.contains('kbd');
+
+    if (isSSD) {
+      return Container(
+        width: 50,
+        height: 50,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+            color: p.isLowStock ? Colors.red.shade400 : Colors.blue.shade300,
+            width: 1.5,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.1),
+              blurRadius: 4,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(8.5),
+          child: Image.asset(
+            'assets/images/ssd_part.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+      );
+    }
+
+    if (isKeyboard) {
+      return Container(
+        width: 50,
+        height: 50,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+            color: p.isLowStock ? Colors.red.shade400 : Colors.teal.shade300,
+            width: 1.5,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.1),
+              blurRadius: 4,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(8.5),
+          child: Image.asset(
+            'assets/images/keyboard_part.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+      );
+    }
+
+    // Icon kategori pendukung lainnya
+    IconData iconData = Icons.memory;
+    Color iconColor = Colors.blue.shade800;
+
+    if (lowerCategory.contains('memory') || lowerName.contains('ram')) {
+      iconData = Icons.memory_outlined;
+      iconColor = Colors.indigo;
+    } else if (lowerCategory.contains('cooling') || lowerName.contains('fan') || lowerName.contains('paste')) {
+      iconData = Icons.mode_fan_off_outlined;
+      iconColor = Colors.cyan.shade700;
+    } else if (lowerCategory.contains('display') || lowerName.contains('lcd') || lowerName.contains('layar')) {
+      iconData = Icons.laptop_chromebook;
+      iconColor = Colors.deepPurple;
+    } else if (lowerCategory.contains('battery') || lowerName.contains('baterai')) {
+      iconData = Icons.battery_charging_full_outlined;
+      iconColor = Colors.amber.shade800;
+    }
+
+    return Container(
+      width: 50,
+      height: 50,
+      decoration: BoxDecoration(
+        color: p.isLowStock ? Colors.red.shade50 : Colors.blue.shade50,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: p.isLowStock ? Colors.red.shade200 : Colors.blue.shade200,
+          width: 1.2,
+        ),
+      ),
+      child: Icon(
+        iconData,
+        color: p.isLowStock ? Colors.red : iconColor,
+        size: 26,
       ),
     );
   }
