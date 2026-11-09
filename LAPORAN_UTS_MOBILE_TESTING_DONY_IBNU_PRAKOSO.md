@@ -595,3 +595,4 @@ Laporan ini disusun secara utuh untuk memenuhi evaluasi Ujian Tengah Semester (U
 NIM: [Isi NIM Anda]  
 Kelas TI23B — S1 Teknik Informatika  
 Fakultas Ilmu Komputer, Universitas Duta Bangsa Surakarta
+
