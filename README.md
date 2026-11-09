@@ -11,7 +11,7 @@
 
 | Informasi | Detail |
 |---|---|
-| **Nama Lengkap** | Dony Ibnu |
+| **Nama Lengkap** | Dony Ibnu Prakoso |
 | **NIM** | [Isi NIM Mahasiswa, contoh: 230101xxx] |
 | **Kelas** | TI23B |
 | **Peran Proyek** | Full-stack Mobile Developer, Quality Assurance & Mobile Automation Tester |

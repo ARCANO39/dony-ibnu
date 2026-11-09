@@ -6,7 +6,7 @@
 **Fakultas / Universitas** : Fakultas Ilmu Komputer, Universitas Duta Bangsa Surakarta  
 **Dosen Pengampu** : Triyono M.Kom  
 **Waktu Pengujian** : Semester Ganjil 2026/2027  
-**Penguji / Mahasiswa** : Dony Ibnu (NIM: [Isi NIM Mahasiswa])  
+**Penguji / Mahasiswa** : Dony Ibnu Prakoso (NIM: [Isi NIM Mahasiswa])  
 **Target Aplikasi** : Pandhawa Notbook Salatiga v1.0.0 (Release Build: `pandhawa_notbook_salatiga.apk`)
 
 ---
@@ -201,7 +201,7 @@ Berdasarkan keseluruhan hasil pengujian User Acceptance Testing (UAT) di atas:
 *Surakarta, November 2026*  
 **Disusun dan Diuji Oleh:**
 
-**Dony Ibnu**  
+**Dony Ibnu Prakoso**  
 NIM: [Isi NIM Anda]  
 Kelas: TI23B - S1 Teknik Informatika  
 Fakultas Ilmu Komputer, Universitas Duta Bangsa Surakarta

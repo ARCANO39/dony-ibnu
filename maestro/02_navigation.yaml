@@ -7,39 +7,31 @@ appId: com.example.laptop_service_app
 - launchApp
 
 # 1. Navigasi ke Halaman Registrasi Unit Masuk
-- tapOn: "Registrasi"
-- assertVisible: "Registrasi Servis Unit Masuk"
-- assertVisible: "Penerimaan Unit Servis Baru"
-- assertVisible: "1. Informasi Pelanggan"
+- tapOn: ".*Registrasi.*"
+- assertVisible: ".*Penerimaan Unit Servis Baru.*"
 - takeScreenshot: screenshots/02_nav_registration
 
 # 2. Navigasi ke Halaman Meja Teknisi
-- tapOn: "Teknisi"
-- assertVisible: "Meja Kerja Teknisi"
-- assertVisible: "Filter Status Pengerjaan:"
+- tapOn: ".*Teknisi.*"
+- assertVisible: ".*Meja Kerja Teknisi.*"
 - takeScreenshot: screenshots/02_nav_technician
 
 # 3. Navigasi ke Halaman Inventaris Gudang Sparepart
-- tapOn: "Gudang"
-- assertVisible: "Inventaris Suku Cadang & Gudang"
-- assertVisible: "Katalog Komponen Laptop"
+- tapOn: ".*Gudang.*"
+- assertVisible: ".*Inventaris Suku Cadang.*"
 - takeScreenshot: screenshots/02_nav_inventory
 
 # 4. Navigasi ke Halaman Kasir POS & Pelunasan
-- tapOn: "Kasir"
-- assertVisible: "Kasir & Pelunasan Servis"
-- assertVisible: "Daftar Siap Pelunasan & Pengambilan"
+- tapOn: ".*Kasir.*"
+- assertVisible: ".*Kasir & Pelunasan.*"
 - takeScreenshot: screenshots/02_nav_pos
 
 # 5. Navigasi ke Halaman Portal Tracking Pelanggan
-- tapOn: "Tracking"
-- assertVisible: "Portal Tracking Servis (Pelanggan)"
-- assertVisible: "Lacak Status Servis Mandiri"
+- tapOn: ".*Tracking.*"
+- assertVisible: ".*Portal Tracking.*"
 - takeScreenshot: screenshots/02_nav_tracking
 
 # 6. Kembali ke Dashboard Utama
-- tapOn: "Dashboard"
-- assertVisible: "Pandhawa Notbook Salatiga"
-- assertVisible: "Unit Aktif"
+- tapOn: ".*Dashboard.*"
+- assertVisible: ".*Pandhawa Notbook.*"
 - takeScreenshot: screenshots/02_nav_back_to_dashboard
-

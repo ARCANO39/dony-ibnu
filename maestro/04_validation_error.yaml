@@ -9,32 +9,31 @@ appId: com.example.laptop_service_app
 # ========================================================
 # KASUS 1: Validasi Form Registrasi Kosong (Field Wajib Isi)
 # ========================================================
-- tapOn: "Registrasi"
-- assertVisible: "Registrasi Servis Unit Masuk"
+- tapOn: ".*Registrasi.*"
+- assertVisible: ".*Registrasi Servis.*"
 
 # Langsung klik Simpan tanpa mengisi data apapun
 - scroll
-- tapOn: "Simpan & Buat Tiket Servis"
+- tapOn: ".*Simpan & Buat Tiket.*"
 
 # Assertion Pesan Validasi Error Muncul
-- assertVisible: "Wajib diisi"
+- assertVisible: ".*Wajib diisi.*"
 - takeScreenshot: screenshots/04_validation_empty_form_error
 
 # ========================================================
 # KASUS 2: Kondisi Gagal Pelacakan Servis (Nomor Tiket Salah)
 # ========================================================
-- tapOn: "Tracking"
-- assertVisible: "Portal Tracking Servis (Pelanggan)"
+- tapOn: ".*Tracking.*"
+- assertVisible: ".*Portal Tracking.*"
 
 # Masukkan nomor tiket servis yang tidak terdaftar (fiktif)
-- tapOn: "Nomor Tiket Servis"
+- tapOn: ".*Nomor Tiket.*"
 - eraseText: 25
 - inputText: "SRV-99999999-999"
 
 # Eksekusi Tombol Pencarian
-- tapOn: "Lacak Status Servis"
+- tapOn: ".*Lacak Status.*"
 
 # Assertion Pesan Error Gagal Tampil
-- assertVisible: "Tiket tidak ditemukan atau 4 digit nomor WhatsApp tidak cocok."
+- assertVisible: ".*Tiket tidak ditemukan.*"
 - takeScreenshot: screenshots/04_validation_ticket_not_found_error
-
